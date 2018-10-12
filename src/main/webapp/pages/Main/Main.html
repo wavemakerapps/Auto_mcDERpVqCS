@@ -5,40 +5,37 @@
         <wm-left-panel columnwidth="2" name="leftpanel" content="leftnav"></wm-left-panel>
         <wm-page-content columnwidth="8" name="mainContent" padding="unset 15px">
             <wm-table name="sampleJavaOperationTable1" title="" dataset="bind:Variables.MyJavaServiceSampleJavaOperation.dataSet" navigation="Basic"></wm-table>
-            <wm-livetable formlayout="dialog" name="Child1LiveTable1">
-                <wm-table gridfirstrowselect="true" editmode="dialog" name="Child1Table1" title="Child1 List" dataset="bind:Variables.DB_LevelCheckChild1Data.dataSet" navigation="Basic">
-                    <wm-table-column binding="childCol1" caption="Child Col1" generator="assigned" pcdisplay="true" mobiledisplay="true" type="string"></wm-table-column>
-                    <wm-table-column binding="childCol2" caption="Child Col2" generator="assigned" pcdisplay="true" mobiledisplay="true" type="string"></wm-table-column>
-                    <wm-table-column binding="childCol3" caption="Child Col3" generator="assigned" pcdisplay="true" mobiledisplay="true" type="string"></wm-table-column>
-                    <wm-table-column binding="parent1.parentId" caption="Parent Id" generator="assigned" pcdisplay="true" mobiledisplay="true" type="integer" primary-key="true" related-entity-name="Parent1"></wm-table-column>
-                    <wm-table-column binding="parent1.parentCol1" caption="Parent Col1" generator="assigned" pcdisplay="true" mobiledisplay="true" type="string" related-entity-name="Parent1" readonly="true"></wm-table-column>
-                    <wm-table-column binding="parent1.parentCol2" caption="Parent Col2" generator="assigned" pcdisplay="true" mobiledisplay="true" type="string" related-entity-name="Parent1" readonly="true"></wm-table-column>
-                    <wm-table-column binding="parent1.parentCol3" caption="Parent Col3" generator="assigned" pcdisplay="true" mobiledisplay="true" type="string" related-entity-name="Parent1" readonly="true"></wm-table-column>
+            <wm-livetable formlayout="dialog" name="Parent1LiveTable1">
+                <wm-table gridfirstrowselect="true" editmode="dialog" name="Parent1Table1" title="Parent1 List" dataset="bind:Variables.DB_LevelCheckParent1Data.dataSet" navigation="Basic">
+                    <wm-table-column binding="parentId" caption="Parent Id" generator="assigned" pcdisplay="true" mobiledisplay="true" type="integer" primary-key="true"></wm-table-column>
+                    <wm-table-column binding="parentCol1" caption="Parent Col1" generator="assigned" pcdisplay="true" mobiledisplay="true" type="string"></wm-table-column>
+                    <wm-table-column binding="parentCol2" caption="Parent Col2" generator="assigned" pcdisplay="true" mobiledisplay="true" type="string"></wm-table-column>
+                    <wm-table-column binding="parentCol3" caption="Parent Col3" generator="assigned" pcdisplay="true" mobiledisplay="true" type="string"></wm-table-column>
                     <wm-table-action widget-type="button" key="addNewRow" display-name="New" iconclass="wi wi-plus" show="true" class="btn-primary" action="addNewRow()" position="footer" shortcutkey=""></wm-table-action>
                     <wm-table-row-action key="updaterow" display-name="" title="Edit" iconclass="wi wi-pencil" show="true" class="btn-transparent" action="editRow()"></wm-table-row-action>
                     <wm-table-row-action key="deleterow" display-name="" title="Delete" iconclass="wi wi-trash" show="true" class="btn-transparent" action="deleteRow()"></wm-table-row-action>
                 </wm-table>
-                <wm-liveform errormessage="" title="Child1 Info" formlayout="dialog" iconclass="wi wi-edit" name="Child1LiveForm1" dataset="bind:Variables.DB_LevelCheckChild1Data.dataSet" captionalign="left" captionposition="top">
-                    <wm-layoutgrid columns="3" name="layoutgrid1">
-                        <wm-gridrow name="gridrow1">
-                            <wm-gridcolumn columnwidth="4" name="gridcolumn1">
-                                <wm-form-field name="childCol1" displayname="Child Col1" required="false" show="true" generator="assigned" primary-key="false" key="childCol1" type="string" is-related="false" maxchars="255" pc-display="true" mobile-display="true"
+                <wm-liveform errormessage="" title="Parent1 Info" formlayout="dialog" iconclass="wi wi-edit" name="Parent1LiveForm1" dataset="bind:Variables.DB_LevelCheckParent1Data.dataSet" captionalign="left" captionposition="top">
+                    <wm-layoutgrid columns="3" name="layoutgrid2">
+                        <wm-gridrow name="gridrow3">
+                            <wm-gridcolumn columnwidth="4" name="gridcolumn6">
+                                <wm-form-field name="parentId" displayname="Parent Id" required="true" show="true" generator="assigned" primary-key="true" key="parentId" type="integer" is-related="false" step="0" pc-display="true" mobile-display="true" widget="number"></wm-form-field>
+                            </wm-gridcolumn>
+                            <wm-gridcolumn columnwidth="4" name="gridcolumn7">
+                                <wm-form-field name="parentCol1" displayname="Parent Col1" required="false" show="true" generator="assigned" primary-key="false" key="parentCol1" type="string" is-related="false" maxchars="255" pc-display="true" mobile-display="true"
                                     widget="text"></wm-form-field>
                             </wm-gridcolumn>
-                            <wm-gridcolumn columnwidth="4" name="gridcolumn2">
-                                <wm-form-field name="childCol2" displayname="Child Col2" required="false" show="true" generator="assigned" primary-key="false" key="childCol2" type="string" is-related="false" maxchars="255" pc-display="true" mobile-display="true"
-                                    widget="text"></wm-form-field>
-                            </wm-gridcolumn>
-                            <wm-gridcolumn columnwidth="4" name="gridcolumn3">
-                                <wm-form-field name="childCol3" displayname="Child Col3" required="false" show="true" generator="assigned" primary-key="false" key="childCol3" type="string" is-related="false" maxchars="255" pc-display="true" mobile-display="true"
+                            <wm-gridcolumn columnwidth="4" name="gridcolumn8">
+                                <wm-form-field name="parentCol2" displayname="Parent Col2" required="false" show="true" generator="assigned" primary-key="false" key="parentCol2" type="string" is-related="false" maxchars="255" pc-display="true" mobile-display="true"
                                     widget="text"></wm-form-field>
                             </wm-gridcolumn>
                         </wm-gridrow>
-                        <wm-gridrow name="gridrow2">
-                            <wm-gridcolumn columnwidth="4" name="gridcolumn4">
-                                <wm-form-field name="parent1" displayname="Parent1" required="true" show="true" generator="assigned" primary-key="true" key="parent1" type="list" is-related="true" pc-display="true" mobile-display="true" widget="select"></wm-form-field>
+                        <wm-gridrow name="gridrow4">
+                            <wm-gridcolumn columnwidth="4" name="gridcolumn9">
+                                <wm-form-field name="parentCol3" displayname="Parent Col3" required="false" show="true" generator="assigned" primary-key="false" key="parentCol3" type="string" is-related="false" maxchars="255" pc-display="true" mobile-display="true"
+                                    widget="text"></wm-form-field>
                             </wm-gridcolumn>
-                            <wm-gridcolumn columnwidth="4" name="gridcolumn5"></wm-gridcolumn>
+                            <wm-gridcolumn columnwidth="4" name="gridcolumn10"></wm-gridcolumn>
                         </wm-gridrow>
                     </wm-layoutgrid>
                     <wm-form-action key="cancel" class="form-cancel btn-secondary" iconclass="wi wi-cancel" action="cancel()" display-name="Cancel" show="true" type="button" update-mode="true"></wm-form-action>
